@@ -617,6 +617,24 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
   .tg-float span{display:none}
 }
 
+
+/* form side illustration */
+.lead-visual{display:grid;gap:12px;padding:16px;border-radius:20px;background:rgba(255,255,255,.05);border:1px dashed rgba(184,242,30,.35)}
+.lv-assets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lv-tile{position:relative;display:grid;place-items:center;gap:4px;padding:12px 6px 10px;border-radius:16px;animation:float 5s ease-in-out infinite}
+.lv-tile.t1{background:linear-gradient(160deg,#E4F5B5,#CFEA8A)}
+.lv-tile.t2{background:linear-gradient(160deg,#FCEBC6,#F7D693);animation-delay:-1.6s}
+.lv-tile.t3{background:linear-gradient(160deg,#FCE0D5,#F6BFAB);animation-delay:-3.2s}
+.lv-tile svg{width:60px;height:60px;filter:drop-shadow(0 8px 10px rgba(16,48,31,.25))}
+.lv-tile b{font:800 12px var(--font-body);letter-spacing:.1em;color:var(--forest-deep);background:rgba(255,255,255,.7);padding:3px 8px;border-radius:7px}
+.lv-cap{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.lv-steps{list-style:none;margin:0;padding:0;display:grid;gap:8px;position:relative}
+.lv-steps::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;width:2px;background:rgba(184,242,30,.35)}
+.lv-steps li{display:flex;align-items:center;gap:12px;position:relative}
+.lv-steps span{width:28px;height:28px;flex-shrink:0;border-radius:9px;display:grid;place-items:center;background:var(--lime);color:var(--forest-deep);font:800 13px var(--font-head)}
+.lv-steps em{font-style:normal;font-size:15px;font-weight:600;color:rgba(255,255,255,.9)}
+@media (max-width:680px){.lv-tile svg{width:48px;height:48px}}
+
 @media (prefers-reduced-motion:reduce){
   mark{background-size:100% 42%!important}
   .progress{display:none}
@@ -768,7 +786,7 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
         <button data-lang="en" aria-pressed="false">EN</button>
         <button data-lang="ru" aria-pressed="false">RU</button>
       </div>
-      <a class="btn btn-primary btn-sm" data-link="app"><span data-i18n="cta.start"></span><svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-primary btn-sm" data-link="support"><span data-i18n="cta.start"></span><svg><use href="#i-arrow"/></svg></a>
       <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu"><span></span></button>
     </div>
   </div>
@@ -779,7 +797,7 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
     <a href="#faq" data-i18n="nav.faq"></a>
     <a href="#dang-ky" data-i18n="nav.register"></a>
     <a data-link="support" data-i18n="nav.contact"></a>
-    <a class="btn btn-primary" data-link="app"><span data-i18n="cta.start"></span><svg><use href="#i-arrow"/></svg></a>
+    <a class="btn btn-primary" data-link="support"><span data-i18n="cta.start"></span><svg><use href="#i-arrow"/></svg></a>
   </nav>
 </header>
 
@@ -795,7 +813,7 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
       <h1 id="hero-title" class="reveal d1" data-i18n="hero.title"></h1>
       <p class="lead reveal d2" data-i18n="hero.sub"></p>
       <div class="hero-actions reveal d3">
-        <a class="btn btn-primary" data-link="app"><span data-i18n="cta.start"></span><svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-primary" data-link="support"><span data-i18n="cta.start"></span><svg><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost" href="#tinh-nang" data-i18n="cta.explore"></a>
       </div>
       <div class="hero-facts reveal d3">
@@ -1030,7 +1048,6 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
       <div class="acts">
         <a class="btn btn-lime" href="#dang-ky"><span data-i18n="form.cta"></span><svg><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost on-dark" data-link="support"><svg><use href="#i-send"/></svg><span data-i18n="cta.pricing"></span></a>
-        <a class="btn btn-ghost on-dark" data-link="app"><span data-i18n="cta.open"></span><svg><use href="#i-arrow"/></svg></a>
       </div>
     </div>
     <div class="sec reveal d1">
@@ -1057,6 +1074,19 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
           <li><svg><use href="#i-check"/></svg><span data-i18n="form.perk2"></span></li>
           <li><svg><use href="#i-check"/></svg><span data-i18n="form.perk3"></span></li>
         </ul>
+        <div class="lead-visual" aria-hidden="true">
+          <div class="lv-assets">
+            <span class="lv-tile t1"><svg><use href="#art-ad"/></svg><b>AD</b></span>
+            <span class="lv-tile t2"><svg><use href="#art-bm"/></svg><b>BM</b></span>
+            <span class="lv-tile t3"><svg><use href="#art-page"/></svg><b>PAGE</b></span>
+          </div>
+          <small class="lv-cap" data-i18n="form.after"></small>
+          <ol class="lv-steps">
+            <li><span>1</span><em data-i18n="form.step1"></em></li>
+            <li><span>2</span><em data-i18n="form.step2"></em></li>
+            <li><span>3</span><em data-i18n="form.step3"></em></li>
+          </ol>
+        </div>
         <div class="lead-tg">
           <svg class="lead-metty" viewBox="0 0 220 250" aria-hidden="true"><use href="#metty"/></svg>
           <div><small data-i18n="form.fast"></small><a class="tg-link" data-link="support"><svg><use href="#i-send"/></svg>@nil_ad01</a></div>
@@ -1183,7 +1213,7 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
         <li><span class="soon"><span data-i18n="foot.privacy"></span><em data-i18n="foot.soon"></em></span></li>
         <li><span class="soon"><span data-i18n="foot.terms"></span><em data-i18n="foot.soon"></em></span></li></ul></div>
       <div class="fcol"><h4 data-i18n="nav.contact"></h4><ul>
-        <li><a data-link="support" data-i18n="foot.tg"></a></li><li><a data-link="app" data-i18n="foot.site"></a></li></ul></div>
+        <li><a data-link="support" data-i18n="foot.tg"></a></li></ul></div>
     </div>
     <div class="fbottom"><span>© <span id="year">2026</span> TOOL META. <span data-i18n="foot.rights"></span></span><span data-i18n="foot.tm"></span></div>
   </div>
@@ -1195,6 +1225,7 @@ nav a[aria-current="page"]{color:var(--ov-acc)!important}
 <script src="assets/i18n.js"></script>
 <script>Object.assign(window.T, {"nav.register": ["Đăng ký", "Sign up", "Заявка"], "nav.chat": ["Chat Telegram", "Chat on Telegram", "Чат в Telegram"], "form.cta": ["Đăng ký mua hàng", "Sign up to buy", "Оставить заявку"], "form.eyebrow": ["Đăng ký mua hàng", "Get TOOL META", "Заявка на покупку"], "form.title": ["Để lại thông tin, <span>chúng tôi liên hệ ngay</span>", "Leave your details, <span>we'll reach out fast</span>", "Оставьте контакты — <span>мы быстро свяжемся</span>"], "form.sub": ["Điền form dưới đây để được tư vấn gói phù hợp, nhận báo giá và hướng dẫn cài đặt.", "Fill in the form to get the right plan, a quote and setup help.", "Заполните форму — подберём тариф, пришлём цену и поможем с установкой."], "form.perk1": ["Tư vấn gói theo số lượng tài sản", "Plan advice based on your assets", "Тариф под количество ваших активов"], "form.perk2": ["Báo giá rõ ràng, không ràng buộc", "Clear quote, no commitment", "Понятная цена без обязательств"], "form.perk3": ["Hỗ trợ cài đặt qua Telegram", "Setup help on Telegram", "Помощь с установкой в Telegram"], "form.fast": ["Cần gấp? Nhắn trực tiếp:", "In a hurry? Message us:", "Срочно? Напишите нам:"], "form.name": ["Họ và tên", "Full name", "Имя и фамилия"], "form.phone": ["Số điện thoại / Zalo", "Phone / WhatsApp", "Телефон"], "form.need": ["Bạn cần gì?", "What do you need?", "Что вам нужно?"], "form.need.trial": ["Dùng thử", "Free trial", "Пробный доступ"], "form.need.buy": ["Mua gói", "Buy a plan", "Купить тариф"], "form.need.agency": ["Đại lý / Hợp tác", "Reseller / Partner", "Партнёрство"], "form.need.consult": ["Tư vấn thêm", "Ask a question", "Консультация"], "form.role": ["Bạn là", "You are", "Вы"], "form.role.ind": ["Cá nhân / Media buyer", "Individual / Media buyer", "Частное лицо / медиабайер"], "form.role.agency": ["Agency", "Agency", "Агентство"], "form.role.biz": ["Doanh nghiệp", "Business", "Компания"], "form.other": ["Khác", "Other", "Другое"], "form.choose": ["— Chọn —", "— Select —", "— Выберите —"], "form.scale": ["Số tài sản đang quản lý", "Assets you manage", "Сколько активов"], "form.scale.1": ["Dưới 10", "Under 10", "Меньше 10"], "form.scale.2": ["10 – 50", "10 – 50", "10 – 50"], "form.scale.3": ["50 – 200", "50 – 200", "50 – 200"], "form.scale.4": ["Trên 200", "Over 200", "Более 200"], "form.assets": ["Loại tài sản quan tâm", "Assets of interest", "Типы активов"], "form.channel": ["Liên hệ qua", "Contact me via", "Связаться через"], "form.ch.call": ["Gọi điện", "Phone call", "Звонок"], "form.note": ["Ghi chú thêm", "Notes", "Комментарий"], "form.ph.name": ["Nguyễn Văn A", "John Smith", "Иван Иванов"], "form.ph.phone": ["09xx xxx xxx", "+1 555 000 000", "+7 900 000 00 00"], "form.ph.tg": ["@username", "@username", "@username"], "form.ph.email": ["ban@email.com", "you@email.com", "you@email.com"], "form.ph.note": ["Ví dụ: cần quản lý 30 BM, muốn dùng thử trước…", "e.g. need to manage 30 BMs, want to try first…", "Например: нужно 30 БМ, хочу сначала попробовать…"], "form.consent": ["Tôi đồng ý để TOOL META liên hệ tư vấn qua thông tin đã cung cấp.", "I agree to be contacted by TOOL META using the details above.", "Я согласен(на), чтобы TOOL META связались со мной по этим данным."], "form.submit": ["Gửi đăng ký", "Send", "Отправить"], "form.sending": ["Đang gửi…", "Sending…", "Отправка…"], "form.err.name": ["Vui lòng nhập họ tên.", "Please enter your name.", "Укажите имя."], "form.err.phone": ["Số điện thoại chưa đúng (8–15 chữ số).", "Please enter a valid phone number (8–15 digits).", "Укажите корректный номер (8–15 цифр)."], "form.err.email": ["Email chưa đúng định dạng.", "That email doesn't look right.", "Неверный формат email."], "form.err.need": ["Vui lòng chọn nhu cầu.", "Please choose what you need.", "Выберите, что вам нужно."], "form.err.consent": ["Vui lòng tích đồng ý để chúng tôi liên hệ.", "Please tick the consent box.", "Отметьте согласие на связь."], "form.err.send": ["Gửi chưa thành công. Vui lòng thử lại hoặc <a data-link=\"support\">nhắn Telegram @nil_ad01</a>.", "Couldn't send. Please try again or <a data-link=\"support\">message @nil_ad01 on Telegram</a>.", "Не удалось отправить. Попробуйте снова или <a data-link=\"support\">напишите @nil_ad01 в Telegram</a>."], "form.err.setup": ["Form chưa được kết nối Google Sheet. Vui lòng <a data-link=\"support\">nhắn Telegram @nil_ad01</a> để được hỗ trợ ngay.", "This form isn't connected yet. Please <a data-link=\"support\">message @nil_ad01 on Telegram</a>.", "Форма ещё не подключена. Пожалуйста, <a data-link=\"support\">напишите @nil_ad01 в Telegram</a>."], "form.ok.t": ["Đã nhận đăng ký!", "Got it — thank you!", "Заявка принята!"], "form.ok.d": ["Cảm ơn bạn. Đội ngũ TOOL META sẽ liên hệ sớm qua kênh bạn đã chọn. Muốn được ưu tiên, hãy nhắn Telegram ngay.", "Thanks! The TOOL META team will contact you soon via your chosen channel. For priority, message us on Telegram now.", "Спасибо! Команда TOOL META скоро свяжется с вами. Для приоритета напишите нам в Telegram."], "form.ok.tg": ["Nhắn Telegram @nil_ad01", "Message @nil_ad01", "Написать @nil_ad01"], "form.again": ["Gửi đăng ký khác", "Send another", "Ещё заявка"]});</script>
 
+<script>Object.assign(window.T, {"form.after": ["Sau khi bạn gửi đăng ký", "What happens next", "Что будет дальше"], "form.step1": ["Chúng tôi nhận thông tin của bạn", "We receive your details", "Мы получаем вашу заявку"], "form.step2": ["Tư vấn & báo giá qua Telegram", "Advice & quote on Telegram", "Консультация и цена в Telegram"], "form.step3": ["Hướng dẫn cài đặt, bắt đầu dùng", "Setup help to get you started", "Помощь с установкой и запуском"]});</script>
 <script>Object.assign(window.T, {"ov.eyebrow": ["Khám phá TOOL META", "Explore TOOL META", "Обзор TOOL META"], "ov.title": ["Chọn nội dung <span>bạn muốn xem</span>", "Pick what <span>you want to see</span>", "Выберите, <span>что посмотреть</span>"], "ov.sub": ["Mỗi phần có trang riêng với đầy đủ chi tiết — bấm vào thẻ để mở.", "Each topic has its own page with full details — tap a card to open it.", "У каждой темы своя страница с подробностями — нажмите на карточку."], "ov.more": ["Xem chi tiết", "See details", "Подробнее"], "ov.f.d": ["Quản lý AD, BM, Fanpage và các công cụ nổi bật, kèm giao diện từng màn hình.", "Manage AD, BM and Pages with core tools — plus a screen-by-screen tour.", "AD, BM и страницы, ключевые инструменты и обзор каждого экрана."], "ov.f.1": ["3 loại tài sản trong một nơi", "3 asset types in one place", "3 типа активов в одном месте"], "ov.f.2": ["Kiểm tra BM, chọn nhanh theo ID", "BM checks, select by ID", "Проверка БМ, выбор по ID"], "ov.f.3": ["Xem giao diện thực tế", "See the interface", "Посмотреть интерфейс"], "ov.h.d": ["Cài extension, đăng nhập, đồng bộ và thao tác hàng loạt chỉ trong vài phút.", "Install, sign in, sync and run bulk actions in minutes.", "Установка, вход, синхронизация и массовые действия за минуты."], "ov.h.1": ["4 bước để bắt đầu", "4 steps to get started", "4 шага для старта"], "ov.h.2": ["Thao tác hàng loạt", "Bulk operations", "Массовые операции"], "ov.h.3": ["Mẹo xử lý nhanh", "Quick troubleshooting tips", "Быстрые советы"], "ov.p.d": ["Gói linh hoạt theo quy trình của bạn, kèm cách chúng tôi bảo vệ không gian làm việc.", "Flexible plans for your workflow, plus how we keep your workspace safe.", "Гибкие тарифы под ваши задачи и защита вашего пространства."], "ov.p.badge": ["Liên hệ báo giá", "Contact for pricing", "Цена по запросу"], "ov.p.1": ["Liên hệ để nhận báo giá", "Contact us for a quote", "Свяжитесь для расчёта цены"], "ov.p.2": ["Tính năng có trong gói", "What's included", "Что входит в тариф"], "ov.p.3": ["Bảo mật & chính sách", "Security & policy", "Безопасность и политика"], "pg.home": ["Trang chủ", "Home", "Главная"], "pg.prev": ["Trang trước", "Previous", "Назад"], "pg.next": ["Tiếp theo", "Next", "Далее"], "pg.feat": ["Toàn bộ những gì TOOL META giúp bạn quản lý: tài khoản quảng cáo, Business Manager và Fanpage.", "Everything TOOL META helps you manage: Ad Accounts, Business Managers and Pages.", "Всё, чем TOOL META помогает управлять: рекламные аккаунты, Business Manager и страницы."], "pg.how": ["Từ cài đặt đến thao tác hàng loạt — chỉ vài phút để bắt đầu.", "From setup to bulk actions — just minutes to get started.", "От установки до массовых действий — всего несколько минут."], "pg.price": ["Chọn gói phù hợp và tìm hiểu cách chúng tôi bảo vệ không gian làm việc của bạn.", "Find the right plan and see how we keep your workspace safe.", "Подберите тариф и узнайте, как мы защищаем ваше пространство."]});</script>
 
 <script src="assets/app.js"></script>
